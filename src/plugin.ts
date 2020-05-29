@@ -25,7 +25,7 @@ export default function pluginWithTasks(
   Object.keys(tasks).forEach((taskName) => {
     tasksWithFirebase[taskName] = (taskSettings: any): any => {
       if (taskSettings?.uid) {
-        return tasks.createCustomToken(
+        return tasks[taskName](
           adminInstance,
           taskSettings.uid,
           taskSettings,

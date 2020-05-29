@@ -434,7 +434,7 @@ export default function attachCustomCommands(
   Cypress.Commands.add(
     options?.commandNames?.getAuthUser || 'getAuthUser',
     (uid: string): Promise<any> => {
-      return cy.task('getAuthUser', uid);
+      return cy.task('getAuthUser', {uid});
     },
   );
 }
